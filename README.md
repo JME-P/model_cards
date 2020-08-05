@@ -1,50 +1,26 @@
----
-language: "ISO 639-1 code for your language, or `multilingual`"
-thumbnail: "url to a thumbnail used in social sharing"
-tags:
-- array
-- of
-- tags
-license: "any valid license identifier"
-datasets:
-- array of dataset identifiers
-metrics:
-- array of metric identifiers
----
-
-# Model name
+# shrugging-grace/tweetclassifier
 
 ## Model description
-
-You can embed local or remote images using `![](...)`
+This model classifies tweets as either relating to the Covid-19 pandemic or not. 
 
 ## Intended uses & limitations
+It is intended to be used on tweets commenting on UK politics, in particular those trending with the #PMQs hashtag, as this refers to weekly Prime Ministers' Questions.  
 
 #### How to use
+``LABEL_0`` means that the tweet relates to Covid-19
 
-```python
-# You can include sample code which will be formatted
-```
-
-#### Limitations and bias
-
-Provide examples of latent issues and potential remediations.
+``LABEL_1`` means that the tweet does not relate to Covid-19
 
 ## Training data
-
-Describe the data you used to train the model.
-If you initialized it with pre-trained weights, add a link to the pre-trained model card or repository with description of the pre-training data.
-
-## Training procedure
-
-Preprocessing, hardware used, hyperparameters...
-
-## Eval results
+The model was trained on 1000 tweets (with the "#PMQs'), which were manually labeled by the author. The tweets were collected between May-July 2020. 
 
 ### BibTeX entry and citation info
 
-```bibtex
-@inproceedings{...,
-  year={2020}
+This was based on a pretrained version of BERT. 
+
+@article{devlin2018bert,
+  title={Bert: Pre-training of deep bidirectional transformers for language understanding},
+  author={Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
+  journal={arXiv preprint arXiv:1810.04805},
+  year={2018}
 }
-```
